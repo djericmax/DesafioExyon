@@ -1,0 +1,32 @@
+<mat-drawer-container class="example-container tam">
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <button routerLink="tree" style="float: right; vertical-align: middle;" mat-raised-button
+  matTooltip="Clique para retornar a lista de Vôos." matTooltipClass="example-tooltip-red"
+  aria-label="Button that shows a red tooltip"><mat-icon>list</mat-icon></button>
+    
+    <mat-list>
+      <a routerLink="ciaaerea" routerLinkActive="active" class="btn btn-info large">
+        <mat-list-item><mat-icon class="margIco">flight</mat-icon> COMPANHIA AÉREA</mat-list-item></a>
+        <mat-divider></mat-divider>
+      <a routerLink="passageiro" routerLinkActive="active" class="btn btn-info large">
+        <mat-list-item><mat-icon class="margIco">person</mat-icon> PASSAGEIRO</mat-list-item></a>
+        <mat-divider></mat-divider>
+      <a routerLink="voo" routerLinkActive="active" class="btn btn-info large">
+        <mat-list-item><mat-icon class="margIco">airplane</mat-icon> VÔO</mat-list-item></a>
+    </mat-list>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()" mat-raised-button
+  matTooltip="Clique para escolher uma opção de cadastro." matTooltipClass="example-tooltip-red"
+  aria-label="Button that shows a red tooltip" class="example-button">
+      <mat-icon>add</mat-icon> DETALHES
+    </button>    
+  </div>
+
+  <div style="margin: 2%;">
+      <app-titulo [titulo]="titulo" class="alinha"></app-titulo>
+      <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>

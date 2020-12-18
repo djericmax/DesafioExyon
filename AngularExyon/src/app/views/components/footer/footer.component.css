@@ -1,0 +1,24 @@
+.titleBar {
+  font-size: 0.9rem;
+  font-weight: 300;
+  text-align: center !important;
+  float: right !important;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  font-weight: 400;
+}
+
+.footer {
+  position: fixed;
+  bottom: -20px;
+  height: 70px;
+  vertical-align: middle;
+  display: flex;
+  justify-content: flex-end !important;
+}

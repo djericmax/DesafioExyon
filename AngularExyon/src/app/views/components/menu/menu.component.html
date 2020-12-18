@@ -1,0 +1,22 @@
+<button mat-icon-button [matMenuTriggerFor]="menu" class="btn btn-outline-basic">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu" class="dark">
+  <button mat-menu-item class="btn btn-dark">
+    <mat-icon>widgets</mat-icon>
+    <span>Meus dados</span>
+  </button>
+  <button mat-menu-item disabled class="btn btn-dark">
+    <mat-icon>mail_outline</mat-icon>
+    <span>Checar e-mail</span>
+  </button>
+  <button mat-menu-item class="btn btn-dark">
+    <mat-icon>notifications_none</mat-icon>
+    <span>Alertas</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item class="btn btn-dark">
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Sair</span>
+  </button>
+</mat-menu>
