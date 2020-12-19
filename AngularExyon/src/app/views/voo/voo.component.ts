@@ -54,19 +54,25 @@ export class VooComponent implements OnInit {
       dataPartida: ['', Validators.required],
       horapartida: ['', Validators.required],
       valorPassagem: ['', Validators.required],
-      ciaAereaId: ['', Validators.required],
-      passageiroId: ['', Validators.required]
+      ciaAereaId: [null, Validators.required],
+      passageiroId: [null, Validators.required]
     }); 
   }
 
-  salvarVoo(vuo: Voo) {
+   salvaEditaVoo(voo: Voo) {
+    this.vooService.put(voo.id, voo).subscribe(
+        (retorno: Voo) => {
+        console.log(retorno);
+        this.carregaVoos();
+      },
+      (erro: any) => { 
+        console.log(erro);
+      }
+    );
+  }
 
-    if (vuo.id === 0) {
-      this.modo = 'put';
-    } else {
-      this.modo = 'post';
-    }
-    this.vooService[this.modo](vuo).subscribe(
+  salvaNovoVoo(voo: Voo) {
+   this.vooService.post(voo).subscribe(
         (retorno: Voo) => {
         console.log(retorno);
         this.carregaVoos();
@@ -90,8 +96,12 @@ export class VooComponent implements OnInit {
   }
 
   enviaSubmit(){
-    this.salvarVoo(this.vooForm?.value);
-    //console.log(this.vooForm?.value);
+    if (this.vooSelecionado.id === 0) {
+      this.salvaNovoVoo(this.vooForm?.value);  
+    } else {
+      this.salvaEditaVoo(this.vooForm?.value);  
+    }    
+    console.log(this.vooForm?.value);
   }
 
   vooSelect(voo: Voo) {

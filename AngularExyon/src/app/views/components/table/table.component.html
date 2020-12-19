@@ -10,44 +10,42 @@
   <div style="width: 60%;">
     <form [formGroup]="tableForm" (submit)="enviaSubmit()">
       <div class="form-group">
-        <label for="formGroupExampleInput">CPF</label>
-        <input type="text" formControlName="cpf" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput">Nome</label>
-        <input type="text" formControlName="nome" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput">Sobrenome</label>
-        <input type="text" formControlName="sobrenome" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput">Vôo nº</label>
-        <input type="text" formControlName="numdoVoo" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput2">Assento</label>
-        <input type="text" formControlName="assento" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput2">Partida</label>
-        <input type="text" formControlName="dataPartida" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput2">Horário</label>
-        <input type="text" formControlName="horapartida" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput2">Valor em R$</label>
-        <input type="text" formControlName="valorPassagem" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput2">ID Cia Aérea</label>
-        <input type="text" formControlName="ciaAereaId" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput2">ID Passageiro</label>
-        <input type="text" formControlName="passageiroId" class="form-control">
+        <mat-form-field class="example-full-width ">
+          <mat-label for="formGroupExampleInput" class="warn">CPF</mat-label>
+          <input matInput formControlName="cpf">
+        </mat-form-field>
+        <mat-form-field class="example-full-width ">
+          <mat-label for="formGroupExampleInput" class="warn">Nome</mat-label>
+          <input matInput formControlName="nome">
+        </mat-form-field>
+        <mat-form-field class="example-full-width ">
+          <mat-label for="formGroupExampleInput" class="warn">Sobrenome</mat-label>
+          <input matInput formControlName="sobrenome">
+        </mat-form-field>
+        <mat-form-field class="example-full-width ">
+          <mat-label for="formGroupExampleInput" class="warn">Vôo nº</mat-label>
+          <input matInput formControlName="numdoVoo">
+        </mat-form-field>
+        <mat-form-field class="example-full-width ">
+          <mat-label for="formGroupExampleInput" class="warn">Partida em</mat-label>
+          <input matInput formControlName="dataPartida">
+        </mat-form-field>
+        <mat-form-field class="example-full-width ">
+          <mat-label for="formGroupExampleInput" class="warn">Horário</mat-label>
+          <input matInput formControlName="horapartida">
+        </mat-form-field>
+        <mat-form-field class="example-full-width ">
+          <mat-label for="formGroupExampleInput" class="warn">Valor em R$</mat-label>
+          <input matInput formControlName="valorPassagem">
+        </mat-form-field>
+        <mat-form-field class="example-full-width ">
+          <mat-label for="formGroupExampleInput" class="warn">ID Cia Aérea</mat-label>
+          <input matInput formControlName=ciaAereaId>
+        </mat-form-field>
+        <mat-form-field class="example-full-width ">
+          <mat-label for="formGroupExampleInput" class="warn">ID Passageiro</mat-label>
+          <input matInput formControlName=passageiroId>
+        </mat-form-field>
       </div>
       <div class="form-group">
         <hr>

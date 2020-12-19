@@ -2,7 +2,7 @@ export class Voo{
 
     constructor() {
         this.id = 0;
-        this.numdoVoo = 0;
+        this.numdoVoo = '';
         this.assento = '';
         this.dataPartida = new Date;
         this.horapartida = new Date;
@@ -12,11 +12,11 @@ export class Voo{
     }
 
     id: number;
-    numdoVoo: number;
+    numdoVoo: string;
     assento: string;
     dataPartida: Date;
     horapartida: Date;
     valorPassagem: string;
-    ciaAereaId: number;
-    passageiroId: number;
+    ciaAereaId: Number;
+    passageiroId: Number;
 }

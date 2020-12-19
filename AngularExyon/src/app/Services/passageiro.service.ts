@@ -25,8 +25,8 @@ constructor(private http: HttpClient) { }
     return this.http.post(`${this.url}`, passageiro);
   }
 
-  put(passageiro: Passageiro) {
-    return this.http.put(`${this.url}/${passageiro.id}`, passageiro);
+  put(id: number, passageiro: Passageiro) {
+    return this.http.put(`${this.url}/${id}`, passageiro);
   }
 
   delete(id: number){

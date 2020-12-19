@@ -14,8 +14,6 @@ import { PassageiroComponent } from './views/passageiro/passageiro.component';
 import { VooComponent } from './views/voo/voo.component';
 
 
-
-
 const routes: Routes = [
   {path: '', redirectTo: 'tree', pathMatch: 'full'},
   {path: '', component: HomeComponent},

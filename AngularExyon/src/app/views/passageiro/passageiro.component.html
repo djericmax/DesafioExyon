@@ -1,28 +1,30 @@
 <div class="row">
     
-    <div *ngIf="passageiroSelecionado" class="col-sm-6">
+    <div *ngIf="passageiroSelecionado" class="col-sm-5">
         <div class="row">
             <div class="mr-auto">
-                <app-titulo [titulo]="(passageiroSelecionado.id === 0 ? 'Novo registro' : 'Cód. do Passageiro:' + passageiroSelecionado.id)"></app-titulo>
+                <app-titulo [titulo]="(passageiroSelecionado.id === 0 ? 'Novo registro' : 'Cód. do Passageiro: ' + passageiroSelecionado.id)"></app-titulo>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
                 <button class="btn btn-outline-danger" (click)="voltar()">Fechar</button>
             </div>
         </div>    
     
         <div style="width: 100%;">
             <form [formGroup]="passageiroForm" (submit)="enviaSubmit()">
-                <div class="form-group">
-                    <label for="formGroupExampleInput">CPF</label>
-                    <input  type="text" formControlName="cpf" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Nome</label>
-                    <input type="text" formControlName="nome" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Sobrenome</label>
-                    <input type="text" formControlName="sobrenome" class="form-control">
+                <div >
+                    <mat-form-field class="example-full-width ">
+                        <mat-label for="formGroupExampleInput" class="warn">CPF do Passageiro</mat-label>
+                        <input matInput formControlName="cpf" placeholder="123.123.123-12">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width ">
+                        <mat-label for="formGroupExampleInput" class="warn">Nome</mat-label>
+                        <input matInput formControlName="nome">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width ">
+                        <mat-label for="formGroupExampleInput" class="warn">Sobrenome</mat-label>
+                        <input matInput formControlName="sobrenome">
+                    </mat-form-field>
                 </div>
                 <div class="form-group">
                     <hr>
@@ -32,7 +34,7 @@
         </div>
     </div>
     
-    <div [ngClass]="{'col-sm-6' : passageiroSelecionado, 'col-sm-12' : !passageiroSelecionado }">
+    <div [ngClass]="{'col-sm-7' : passageiroSelecionado, 'col-sm-12' : !passageiroSelecionado }">
         <div class="col-sm-2" style="float: right">
             <button class="btn btn-outline-success" (click)="novo()">+ Novo</button>
         </div>        

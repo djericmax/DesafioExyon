@@ -116,6 +116,7 @@ export class TableComponent implements OnInit {
         (retorno: Voo) => {
         console.log(retorno);
         this.carregaVoos();
+        this.voltar();
       },
       (erro: any) => { 
         console.log(erro);

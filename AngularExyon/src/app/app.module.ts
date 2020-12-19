@@ -20,6 +20,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { HttpClientModule } from '@angular/common/http';
 import { CPFPipe } from './views/cpf.pipe';
 import { MatTreeModule } from '@angular/material/tree';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatBadgeModule } from '@angular/material/badge';
 import { HomeComponent } from './views/components/home/home.component';
 import { MenuComponent } from './views/components/menu/menu.component';
 import { SidebarComponent } from './views/components/sidebar/sidebar.component';
@@ -71,7 +74,10 @@ import { VooComponent } from './views/voo/voo.component';
     FormsModule,
     ReactiveFormsModule,
     ModalModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

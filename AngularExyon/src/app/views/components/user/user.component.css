@@ -1,4 +1,16 @@
-.image {
+.menuDiv{
+  float: right;
+  vertical-align: middle;
+}
+
+.menuUser{
+  float: right;
+  font-size: 15px;
+  vertical-align: middle;
+}
+
+.menuImage{
+  float: right;
   width: 9%;
   border-radius: 50%;
   padding-right: 5px;

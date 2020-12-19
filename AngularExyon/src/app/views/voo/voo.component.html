@@ -6,39 +6,41 @@
                 <app-titulo [titulo]="(vooSelecionado.id === 0 ? 'Novo registro' : 'Cód. do Registro:' + vooSelecionado.id)">
                 </app-titulo>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <button class="btn btn-outline-danger" (click)="voltar()">Fechar</button>
             </div>
         </div>
         <div style="width: 100%;">
             <form [formGroup]="vooForm" (submit)="enviaSubmit()">
                 <div class="form-group">
-                    <label for="formGroupExampleInput">Vôo nº</label>
-                    <input type="text" formControlName="numdoVoo" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Assento</label>
-                    <input type="text" formControlName="assento" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Partida</label>
-                    <input type="text" formControlName="dataPartida" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Horário</label>
-                    <input type="text" formControlName="horapartida" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Valor em R$</label>
-                    <input type="text" formControlName="valorPassagem" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">ID Cia Aérea</label>
-                    <input type="text" formControlName="ciaAereaId" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">ID Passageiro</label>
-                    <input type="text" formControlName="passageiroId" class="form-control">
+                    <mat-form-field class="example-full-width ">
+                        <mat-label for="formGroupExampleInput" class="warn">Vôo nº</mat-label>
+                        <input matInput formControlName="numdoVoo">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width ">
+                        <mat-label for="formGroupExampleInput" class="warn">Assento</mat-label>
+                        <input matInput formControlName="assento">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width ">
+                        <mat-label for="formGroupExampleInput" class="warn">Partida em</mat-label>
+                        <input matInput formControlName="dataPartida">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width ">
+                        <mat-label for="formGroupExampleInput" class="warn">Horário</mat-label>
+                        <input matInput formControlName="horapartida">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width ">
+                        <mat-label for="formGroupExampleInput" class="warn">Valor em R$</mat-label>
+                        <input matInput formControlName="valorPassagem">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width ">
+                        <mat-label for="formGroupExampleInput" class="warn">ID Cia Aérea</mat-label>
+                        <input matInput formControlName=ciaAereaId>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width ">
+                        <mat-label for="formGroupExampleInput" class="warn">ID Passageiro</mat-label>
+                        <input matInput formControlName=passageiroId>
+                    </mat-form-field>
                 </div>
                 <div class="form-group">
                     <hr>

@@ -37,8 +37,8 @@ constructor(private http: HttpClient) { }
     return this.http.post(`${this.url}`, voo);
   }
 
-  put(voo: Voo) {
-    return this.http.put(`${this.url}/${voo.id}`, voo);
+  put(id: number, voo: Voo) {
+    return this.http.put(`${this.url}/${id}`, voo);
   }
 
   puttable(id: number, voo: Voo) {

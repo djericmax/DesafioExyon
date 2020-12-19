@@ -44,12 +44,10 @@ namespace ApiExyon.Models
         [Range(1, double.MaxValue, ErrorMessage = "Valor de passagem inválido")]
         public string ValorPassagem { get; set; }
 
-        [Range(1, double.MaxValue, ErrorMessage = "Companhia aérea inválida")]
         public int CiaAereaId { get; set; }
 
         public CiaAerea CiaAerea { get; set; }
 
-        [Range(1, double.MaxValue, ErrorMessage = "Passageiro inválido")]
         public int PassageiroId { get; set; }
 
         public Passageiro Passageiro { get; set; }

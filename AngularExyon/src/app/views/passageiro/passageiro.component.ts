@@ -57,14 +57,20 @@ export class PassageiroComponent implements OnInit {
     }); 
   }
 
-  salvarPassageiro(pass: Passageiro) {
+   salvaEditaPassageiro(pass: Passageiro) {
+    this.passageiroService.put(pass.id, pass).subscribe(
+        (retorno: Passageiro) => {
+        console.log(retorno);
+        this.carregaPassageiros();
+      },
+      (erro: any) => { 
+        console.log(erro);
+      }
+    );
+  }
 
-    if (pass.id == 0) {
-      this.modo = 'put';
-    } else {
-      this.modo = 'post';
-    }
-    this.passageiroService[this.modo](pass).subscribe(
+  salvaNovoPassageiro(pass: Passageiro) {
+   this.passageiroService.post(pass).subscribe(
         (retorno: Passageiro) => {
         console.log(retorno);
         this.carregaPassageiros();
@@ -88,8 +94,12 @@ export class PassageiroComponent implements OnInit {
   }
 
   enviaSubmit(){
-    this.salvarPassageiro(this.passageiroForm?.value);
-   // console.log(this.passageiroForm?.value);
+    if (this.passageiroSelecionado.id === 0) {
+      this.salvaNovoPassageiro(this.passageiroForm?.value);  
+    } else {
+      this.salvaEditaPassageiro(this.passageiroForm?.value);  
+    }    
+    console.log(this.passageiroForm?.value);
   }
 
   passageiroSelect(passageiro: Passageiro) {
