@@ -7,14 +7,38 @@ import { Voo } from 'src/app/Models/Voo';
 import { CiaaereaService } from 'src/app/Services/ciaaerea.service';
 import { PassageiroService } from 'src/app/Services/passageiro.service';
 import { VooService } from 'src/app/Services/voo.service';
+import {
+  MAT_MOMENT_DATE_FORMATS,
+  MomentDateAdapter,
+  MAT_MOMENT_DATE_ADAPTER_OPTIONS,} from '@angular/material-moment-adapter';
+import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
+import * as moment from 'moment';
 
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css']  
+  styleUrls: ['./table.component.css'],
+  providers: [
+    // The locale would typically be provided on the root module of your application. We do it at
+    // the component level here, due to limitations of our example generation script.
+    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
+
+    // `MomentDateAdapter` and `MAT_MOMENT_DATE_FORMATS` can be automatically provided by importing
+    // `MatMomentDateModule` in your applications root module. We provide it at the component level
+    // here, due to limitations of our example generation script.
+    {
+      provide: DateAdapter,
+      useClass: MomentDateAdapter,
+      deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]
+    },
+    {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
+  ],
 })
 export class TableComponent implements OnInit {
+
+  public myModel = ''
+  public mask = [/\d/, /\d/, ':', /\d/, /\d/]
 
   public modalRef!: BsModalRef;
   public tableForm!: FormGroup;
@@ -32,7 +56,8 @@ export class TableComponent implements OnInit {
     this.modalRef = this.modalService.show(template);
   }
 
-  constructor(private fb: FormBuilder,
+  constructor(private _adapter: DateAdapter<any>,
+              private fb: FormBuilder,
               private modalService: BsModalService,
               private passageiroService: PassageiroService,
               private ciaaereaService: CiaaereaService,
@@ -95,8 +120,7 @@ export class TableComponent implements OnInit {
       );
   }
 
-  criarForm() {
-    this.tableForm = this.fb.group({
+  criarForm() { this.tableForm = this.fb.group({
       id: [''],
       cpf: ['', Validators.required],
       nome: ['', Validators.required],

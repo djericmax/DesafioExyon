@@ -14,21 +14,29 @@
             <form [formGroup]="vooForm" (submit)="enviaSubmit()">
                 <div class="form-group">
                     <mat-form-field class="example-full-width ">
-                        <mat-label for="formGroupExampleInput" class="warn">Vôo nº</mat-label>
+                        <mat-label for="formGroupExampleInput">Vôo nº</mat-label>
                         <input matInput formControlName="numdoVoo">
                     </mat-form-field>
                     <mat-form-field class="example-full-width ">
-                        <mat-label for="formGroupExampleInput" class="warn">Assento</mat-label>
+                        <mat-label for="formGroupExampleInput">Assento</mat-label>
                         <input matInput formControlName="assento">
                     </mat-form-field>
-                    <mat-form-field class="example-full-width ">
-                        <mat-label for="formGroupExampleInput" class="warn">Partida em</mat-label>
-                        <input matInput formControlName="dataPartida">
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width ">
-                        <mat-label for="formGroupExampleInput" class="warn">Horário</mat-label>
-                        <input matInput formControlName="horapartida">
-                    </mat-form-field>
+                    <div fxLayout="row wrap">
+                        <div fxFlex="40" fxFill fxLayoutAlign="Start center" style="float: left; width: 50%;">
+                            <mat-form-field class="example-full-width ">
+                                <mat-label>Partida em</mat-label>
+                                <input matInput [matDatepicker]="dp" formControlName="dataPartida">
+                                <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                                <mat-datepicker #dp></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="40" fxFill fxLayoutAlign="Start center" style="float: right; width: 45%;">
+                            <mat-form-field class="example-full-width ">
+                                <mat-label for="formGroupExampleInput">Horário</mat-label>
+                                <input type="time" matInput formControlName="horapartida">
+                            </mat-form-field>
+                        </div>
+                    </div>
                     <mat-form-field class="example-full-width ">
                         <mat-label for="formGroupExampleInput" class="warn">Valor em R$</mat-label>
                         <input matInput formControlName="valorPassagem">

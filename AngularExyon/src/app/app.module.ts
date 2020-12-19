@@ -35,6 +35,8 @@ import { TableComponent } from './views/components/table/table.component';
 import { CiaaereaComponent } from './views/ciaaerea/ciaaerea.component';
 import { PassageiroComponent } from './views/passageiro/passageiro.component';
 import { VooComponent } from './views/voo/voo.component';
+import { TextMaskModule } from 'angular2-text-mask';
+
 
 
 
@@ -77,7 +79,8 @@ import { VooComponent } from './views/voo/voo.component';
     HttpClientModule,
     MatDatepickerModule,
     MatInputModule,
-    MatBadgeModule
+    MatBadgeModule,
+    TextMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]

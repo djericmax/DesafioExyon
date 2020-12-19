@@ -3,11 +3,31 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Voo } from 'src/app/Models/Voo';
 import { VooService } from 'src/app/Services/voo.service';
+import {
+  MAT_MOMENT_DATE_FORMATS,
+  MomentDateAdapter,
+  MAT_MOMENT_DATE_ADAPTER_OPTIONS,} from '@angular/material-moment-adapter';
+import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 
 @Component({
   selector: 'app-voo',
   templateUrl: './voo.component.html',
-  styleUrls: ['./voo.component.css']
+  styleUrls: ['./voo.component.css'],
+  providers: [
+    // The locale would typically be provided on the root module of your application. We do it at
+    // the component level here, due to limitations of our example generation script.
+    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
+
+    // `MomentDateAdapter` and `MAT_MOMENT_DATE_FORMATS` can be automatically provided by importing
+    // `MatMomentDateModule` in your applications root module. We provide it at the component level
+    // here, due to limitations of our example generation script.
+    {
+      provide: DateAdapter,
+      useClass: MomentDateAdapter,
+      deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]
+    },
+    {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
+  ],
 })
 export class VooComponent implements OnInit {
 
@@ -24,7 +44,8 @@ export class VooComponent implements OnInit {
     this.modalRef = this.modalService.show(lgModal);
   }
 
-  constructor(private fb: FormBuilder,
+  constructor(private _adapter: DateAdapter<any>,
+              private fb: FormBuilder,
               private modalService: BsModalService,
               private vooService: VooService) {
     this.criarForm();
