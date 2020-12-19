@@ -27,7 +27,7 @@
           <input matInput formControlName="numdoVoo">
         </mat-form-field>
         <div fxLayout="row wrap">
-          <div fxFlex="50" fxFill fxLayoutAlign="Start center" style="float: left; width: 45%;">
+          <div fxFlex="50" fxFill fxLayoutAlign="Start center" class="floatL">
             <mat-form-field class="example-full-width ">
               <mat-label>Partida em</mat-label>
               <input matInput [matDatepicker]="dp" formControlName="dataPartida">
@@ -35,11 +35,11 @@
               <mat-datepicker #dp></mat-datepicker>
             </mat-form-field>
           </div>
-          <div fxFlex="50" fxFill fxLayoutAlign="Start center" style="float: right; width: 45%;">
+          <div fxFlex="50" fxFill fxLayoutAlign="Start center" class="floatR">
             <mat-form-field class="example-full-width ">
               <mat-label for="formGroupExampleInput">Horário</mat-label>
               <!-- <input type="time" matInput formControlName="horapartida"> -->
-              <input [textMask]="{mask: mask}" type="time" matInput formControlName="horapartida">
+              <input [textMask]="{mask: mask}" matInput formControlName="horapartida">
             </mat-form-field>
           </div>
         </div>
