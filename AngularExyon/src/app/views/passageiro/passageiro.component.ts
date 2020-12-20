@@ -61,8 +61,8 @@ export class PassageiroComponent implements OnInit {
 
    salvaEditaPassageiro(pass: Passageiro) {
     this.passageiroService.put(pass.id, pass).subscribe(
-        (retorno: Passageiro) => {
-        console.log(retorno);
+        (model: any) => {
+        console.log(model);
         this.carregaPassageiros();
       },
       (erro: any) => { 
@@ -73,8 +73,8 @@ export class PassageiroComponent implements OnInit {
 
   salvaNovoPassageiro(pass: Passageiro) {
    this.passageiroService.post(pass).subscribe(
-        (retorno: Passageiro) => {
-        console.log(retorno);
+        (model: any) => {
+        console.log(model);
         this.carregaPassageiros();
       },
       (erro: any) => { 

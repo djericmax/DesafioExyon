@@ -33,12 +33,8 @@
                         <div fxFlex="40" fxFill fxLayoutAlign="Start center" style="float: right; width: 45%;">
                             <mat-form-field class="example-full-width ">
                                 <mat-label for="formGroupExampleInput">Horário</mat-label>
-                                <!-- <input type="time" matInput formControlName="horapartida"> -->
-
                                 <ngx-material-timepicker #picker></ngx-material-timepicker>
-                                <input [ngxTimepicker]="picker" matInput formControlName="horapartida">
-
-
+                                <input type="time" matInput formControlName="horapartida">
 
                             </mat-form-field>
                         </div>
@@ -46,6 +42,7 @@
                     <mat-form-field class="example-full-width ">
                         <mat-label for="formGroupExampleInput" class="warn">Valor em R$</mat-label>
                         <input matInput formControlName="valorPassagem">
+
                     </mat-form-field>
                     <mat-form-field class="example-full-width ">
                         <mat-label for="formGroupExampleInput" class="warn">ID Cia Aérea</mat-label>

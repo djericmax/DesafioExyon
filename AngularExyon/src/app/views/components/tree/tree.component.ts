@@ -19,9 +19,9 @@ interface FoodNode {
   children?: FoodNode[];
 }
 
-const TREE_DATA: FoodNode[] = [
+const TREE_DATA: FoodNode[] =  [
   {
-    name: 'Companhia: LaTam', children: [
+    name: 'Companhia: Varig', children: [
       {name: 'Vôo: 05', children: [
         {name: ''}]},
     ]
@@ -52,7 +52,7 @@ interface FlatNode {
 export class TreeComponent {
   
   titulo = 'Descrição de Vôos';
-  voos: Voo[] = [];
+  vuos: Voo[] = [];
 
   private _transformer = (node: FoodNode, level: number) => {
     return {
@@ -83,8 +83,8 @@ export class TreeComponent {
   carregaVoos() {
       this.vooService.getAll().subscribe(
         (voos: Voo[]) => { 
-          this.voos = voos;
-          console.log(voos);
+          this.vuos = voos;
+          console.log(this.vuos);
         },
         (erro: any) => {
           console.log(erro);

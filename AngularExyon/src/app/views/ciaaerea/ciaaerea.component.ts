@@ -59,9 +59,10 @@ export class CiaaereaComponent implements OnInit {
 
   salvaEditaCiaaerea(cia: Ciaaerea) {
     this.ciaaereaService.put(cia.id, cia).subscribe(
-        (retorno: Ciaaerea) => {
+        (retorno: any) => {
         console.log(retorno);
         this.carregaCiaaereas();
+        this.voltar();
       },
       (erro: any) => { 
         console.log(erro);
@@ -71,9 +72,10 @@ export class CiaaereaComponent implements OnInit {
 
   salvaNovoCiaaerea(cia: Ciaaerea) {
    this.ciaaereaService.post(cia).subscribe(
-        (retorno: Ciaaerea) => {
+        (retorno: any) => {
         console.log(retorno);
-        this.carregaCiaaereas();
+       this.carregaCiaaereas();
+       this.voltar();
       },
       (erro: any) => { 
         console.log(erro);

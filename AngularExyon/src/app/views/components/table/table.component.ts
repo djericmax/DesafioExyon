@@ -82,9 +82,9 @@ export class TableComponent implements OnInit {
 
   carregaCiaaereas() {
     this.ciaaereaService.getAll().subscribe(
-      (ciaaerea: Ciaaerea[]) => {
-        this.ciaaereas = ciaaerea;
-      //  console.log(ciaaerea);
+      (cia: Ciaaerea[]) => {
+        this.ciaaereas = cia;
+        console.log(this.ciaaereaId);
       },
       (erro: any) => {
         console.log(erro);
@@ -133,8 +133,8 @@ export class TableComponent implements OnInit {
 
   salvarVoo(vuo: Voo) {
     this.vooService.puttable(vuo.id, vuo).subscribe(
-        (retorno: Voo) => {
-        console.log(retorno);
+        (model: any) => {
+        console.log(model);
         this.carregaVoos();
         this.voltar();
       },

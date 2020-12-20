@@ -1,6 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HomeComponent } from './views/components/home/home.component';
+import { MenuComponent } from './views/components/menu/menu.component';
+import { SidebarComponent } from './views/components/sidebar/sidebar.component';
+import { TreeComponent } from './views/components/tree/tree.component';
+import { FooterComponent } from './views/components/footer/footer.component';
+import { HeaderComponent } from './views/components/header/header.component';
+import { TituloComponent } from './views/components/titulo/titulo.component';
+import { UserComponent } from './views/components/user/user.component';
+import { TableComponent } from './views/components/table/table.component';
+import { CiaaereaComponent } from './views/ciaaerea/ciaaerea.component';
+import { PassageiroComponent } from './views/passageiro/passageiro.component';
+import { VooComponent } from './views/voo/voo.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,22 +36,8 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatBadgeModule } from '@angular/material/badge';
-import { HomeComponent } from './views/components/home/home.component';
-import { MenuComponent } from './views/components/menu/menu.component';
-import { SidebarComponent } from './views/components/sidebar/sidebar.component';
-import { TreeComponent } from './views/components/tree/tree.component';
-import { FooterComponent } from './views/components/footer/footer.component';
-import { HeaderComponent } from './views/components/header/header.component';
-import { TituloComponent } from './views/components/titulo/titulo.component';
-import { UserComponent } from './views/components/user/user.component';
-import { TableComponent } from './views/components/table/table.component';
-import { CiaaereaComponent } from './views/ciaaerea/ciaaerea.component';
-import { PassageiroComponent } from './views/passageiro/passageiro.component';
-import { VooComponent } from './views/voo/voo.component';
 import { TextMaskModule } from 'angular2-text-mask';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
-
-
 
 
 @NgModule({
@@ -82,7 +81,7 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     MatInputModule,
     MatBadgeModule,
     TextMaskModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -82,7 +82,7 @@ export class VooComponent implements OnInit {
 
    salvaEditaVoo(voo: Voo) {
     this.vooService.put(voo.id, voo).subscribe(
-        (retorno: Voo) => {
+        (retorno: any) => {
         console.log(retorno);
         this.carregaVoos();
       },
@@ -94,7 +94,7 @@ export class VooComponent implements OnInit {
 
   salvaNovoVoo(voo: Voo) {
    this.vooService.post(voo).subscribe(
-        (retorno: Voo) => {
+        (retorno: any) => {
         console.log(retorno);
         this.carregaVoos();
       },
