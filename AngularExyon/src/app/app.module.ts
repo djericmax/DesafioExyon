@@ -36,6 +36,7 @@ import { CiaaereaComponent } from './views/ciaaerea/ciaaerea.component';
 import { PassageiroComponent } from './views/passageiro/passageiro.component';
 import { VooComponent } from './views/voo/voo.component';
 import { TextMaskModule } from 'angular2-text-mask';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 
 
@@ -80,7 +81,8 @@ import { TextMaskModule } from 'angular2-text-mask';
     MatDatepickerModule,
     MatInputModule,
     MatBadgeModule,
-    TextMaskModule
+    TextMaskModule,
+    NgxMaterialTimepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

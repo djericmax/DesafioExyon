@@ -13,6 +13,8 @@ import { PassageiroService } from 'src/app/Services/passageiro.service';
 })
 export class PassageiroComponent implements OnInit {
 
+  public myModel = ''
+  public mask = [/[0-9]/, /[0-9]/, /[0-9]/, '.', /[0-9]/, /[0-9]/, /[0-9]/, '.', /[0-9]/, /[0-9]/, /[0-9]/, '-', /[0-9]/, /[0-9]/]
   public modalRef!: BsModalRef;
   public passageiroForm!: FormGroup;
   titulo = "Dados dos Passageiros"

@@ -19,8 +19,8 @@ namespace ApiExyon.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
-        [MaxLength(11, ErrorMessage = "Campo deve conter 11 caracteres")]
-        [MinLength(11, ErrorMessage = "Campo deve conter 11 caracteres")]
+        [MaxLength(14, ErrorMessage = "Campo deve conter 11 caracteres")]
+        [MinLength(14, ErrorMessage = "Campo deve conter 11 caracteres")]
         public string CPF { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
