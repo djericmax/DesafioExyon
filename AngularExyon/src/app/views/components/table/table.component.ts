@@ -46,7 +46,7 @@ export class TableComponent implements OnInit {
   vuo: Voo = new Voo;
   passageiros: Passageiro[] = [];
   ciaaereas: Ciaaerea[] = [];
-  ciaaereaId: number = 4;
+  ciaId: number | undefined;
  
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
@@ -84,7 +84,7 @@ export class TableComponent implements OnInit {
     this.ciaaereaService.getAll().subscribe(
       (cia: Ciaaerea[]) => {
         this.ciaaereas = cia;
-        console.log(this.ciaaereaId);
+        console.log(this.ciaaereas[0]);           
       },
       (erro: any) => {
         console.log(erro);
@@ -105,7 +105,7 @@ export class TableComponent implements OnInit {
   }
 
   carregaVooByciaAereaId() {
-      this.vooService.getByciaAereaId(this.ciaaereaId).subscribe(
+      this.vooService.getByciaAereaId(4).subscribe(
         (vuo: Voo) => { 
           this.vuo = vuo;
           console.log(vuo);
