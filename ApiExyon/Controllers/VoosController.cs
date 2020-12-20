@@ -89,7 +89,7 @@ namespace ApiExyon.Controllers
             }
         }
 
-        [HttpGet]
+  /*      [HttpGet]
         [Route("voo/{ciaAereaNumdoVoo:int}")]
         public async Task<ActionResult<List<Voo>>> GetByCiaAereaNumdoVoo([FromServices] DataContext context, string ciaAereaNumdoVoo)
         {
@@ -107,7 +107,7 @@ namespace ApiExyon.Controllers
             {
                 return BadRequest($"Erro: {ex.Message}");
             }
-        } 
+        } */
 
 
         [HttpPost]
