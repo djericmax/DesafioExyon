@@ -33,9 +33,7 @@
                         <div fxFlex="40" fxFill fxLayoutAlign="Start center" style="float: right; width: 45%;">
                             <mat-form-field class="example-full-width ">
                                 <mat-label for="formGroupExampleInput">Horário</mat-label>
-                                <ngx-material-timepicker #picker></ngx-material-timepicker>
                                 <input type="time" matInput formControlName="horapartida">
-
                             </mat-form-field>
                         </div>
                     </div>
@@ -46,11 +44,11 @@
                     </mat-form-field>
                     <mat-form-field class="example-full-width ">
                         <mat-label for="formGroupExampleInput" class="warn">ID Cia Aérea</mat-label>
-                        <input matInput formControlName=ciaAereaId>
+                        <input matInput formControlName="ciaAereaId">
                     </mat-form-field>
                     <mat-form-field class="example-full-width ">
                         <mat-label for="formGroupExampleInput" class="warn">ID Passageiro</mat-label>
-                        <input matInput formControlName=passageiroId>
+                        <input matInput formControlName="passageiroId">
                     </mat-form-field>
                 </div>
                 <div class="form-group">
@@ -84,8 +82,8 @@
                     <td>{{voo.numdoVoo}}</td>
                     <td>{{voo.assento}}</td>
                     <td>{{voo.dataPartida | date:'dd/MM/yyyy'}}</td>
-                    <td>{{voo.horapartida | date:'HH:mm'}}</td>
-                    <td>{{voo.valorPassagem | currency:'BRL':true}}</td>
+                    <td>{{voo.horapartida}}</td>
+                    <td>{{voo.valorPassagem | currency:'BRL':'symbol'}}</td>
                     <td style="width: 1%;">
                         <button (click)="vooSelect(voo)" mat-mini-fab color="accent" mat-raised-button matTooltip="Editar este registro"
                             matTooltipClass="example-tooltip-red" aria-label="Button that shows a red tooltip">

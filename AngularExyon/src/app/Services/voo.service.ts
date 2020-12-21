@@ -21,15 +21,15 @@ constructor(private http: HttpClient) { }
     return this.http.get<Voo>(`${this.url}/${id}`);
   }
 
-  getByciaAereaId(id: number): Observable<Voo> {
+  getByCiaAereaId(id: number): Observable<Voo> {
     return this.http.get<Voo>(`${this.url}/cia/${id}`);
   }
 
-  getBypassageiroId(id: number): Observable<Voo> {
+  getByPassageiroId(id: number): Observable<Voo> {
     return this.http.get<Voo>(`${this.url}/pass/${id}`);
   }
 
-  getByciaAereaNumdoVoo(id: number): Observable<Voo> {
+  getByNumdoVoo(id: number): Observable<Voo> {
     return this.http.get<Voo>(`${this.url}/voo/${id}`);
   }
 
@@ -38,10 +38,6 @@ constructor(private http: HttpClient) { }
   }
 
   put(id: number, voo: Voo) {
-    return this.http.put(`${this.url}/${id}`, voo);
-  }
-
-  puttable(id: number, voo: Voo) {
     return this.http.put(`${this.url}/${id}`, voo);
   }
 

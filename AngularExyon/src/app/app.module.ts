@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { HomeComponent } from './views/components/home/home.component';
 import { MenuComponent } from './views/components/menu/menu.component';
@@ -38,6 +38,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatBadgeModule } from '@angular/material/badge';
 import { TextMaskModule } from 'angular2-text-mask';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt)
 
 
 @NgModule({
@@ -83,7 +87,7 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     TextMaskModule,
     NgxMaterialTimepickerModule,
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

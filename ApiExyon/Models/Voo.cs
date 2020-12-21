@@ -7,23 +7,31 @@ namespace ApiExyon.Models
     {
         public Voo(){}
 
-        public Voo(int id, string numdoVoo, string assento, DateTime dataPartida, DateTime horapartida, string valorPassagem, int ciaAereaId, int passageiroId)
+        public Voo(
+            int id,
+            string numdoVoo,
+            string assento,
+            string dataPartida,
+            string horapartida,
+            string valorPassagem,
+            string ciaAereaId,
+            string passageiroId)
         {
             this.Id = id;
-            this.NumdoVoo = numdoVoo;
+            this.NumdoVoo = Convert.ToInt32(numdoVoo);
             this.Assento = assento;
             this.DataPartida = dataPartida;
             this.Horapartida = horapartida;
             this.ValorPassagem = valorPassagem;
-            this.CiaAereaId = ciaAereaId;
-            this.PassageiroId = passageiroId;
+            this.CiaAereaId = Convert.ToInt32(ciaAereaId);
+            this.PassageiroId = Convert.ToInt32(passageiroId);
         }
 
         [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
-        public string NumdoVoo { get; set; }
+        public int NumdoVoo { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
         [MinLength(3, ErrorMessage = "Campo deve ter pelo menos 3 caracteres")]
@@ -33,12 +41,12 @@ namespace ApiExyon.Models
         [Required(ErrorMessage = "Campo obrigatório")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0: dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime DataPartida { get; set; }
+        public string DataPartida { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
         [DataType(DataType.Time)]
         [DisplayFormat(DataFormatString = "{0: HH:mm}", ApplyFormatInEditMode = true)]
-        public DateTime Horapartida { get; set; }
+        public string Horapartida { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
         [Range(1, double.MaxValue, ErrorMessage = "Valor de passagem inválido")]

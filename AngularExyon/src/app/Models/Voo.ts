@@ -5,7 +5,7 @@ export class Voo{
         this.numdoVoo = '';
         this.assento = '';
         this.dataPartida = new Date;
-        this.horapartida = new Date;
+        this.horapartida = '';
         this.valorPassagem = '';
         this.ciaAereaId = 0;
         this.passageiroId = 0;
@@ -15,8 +15,8 @@ export class Voo{
     numdoVoo: string;
     assento: string;
     dataPartida: Date;
-    horapartida: Date;
+    horapartida: string;
     valorPassagem: string;
-    ciaAereaId: Number;
-    passageiroId: Number;
+    ciaAereaId: number;
+    passageiroId: number;
 }

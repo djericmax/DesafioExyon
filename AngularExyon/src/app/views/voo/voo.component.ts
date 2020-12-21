@@ -75,8 +75,8 @@ export class VooComponent implements OnInit {
       dataPartida: ['', Validators.required],
       horapartida: ['', Validators.required],
       valorPassagem: ['', Validators.required],
-      ciaAereaId: [null, Validators.required],
-      passageiroId: [null, Validators.required]
+      ciaAereaId: [0, Validators.required],
+      passageiroId: [0, Validators.required]
     }); 
   }
 

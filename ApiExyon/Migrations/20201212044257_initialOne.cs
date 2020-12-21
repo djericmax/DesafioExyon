@@ -43,10 +43,10 @@ namespace ApiExyon.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    NumdoVoo = table.Column<string>(nullable: false),
+                    NumdoVoo = table.Column<int>(nullable: false),
                     Assento = table.Column<string>(maxLength: 8, nullable: false),
                     DataPartida = table.Column<DateTime>(nullable: false),
-                    Horapartida = table.Column<DateTime>(nullable: false),
+                    Horapartida = table.Column<string>(nullable: false),
                     ValorPassagem = table.Column<string>(nullable: false),
                     CiaAereaId = table.Column<int>(nullable: false),
                     PassageiroId = table.Column<int>(nullable: false)
@@ -116,27 +116,27 @@ namespace ApiExyon.Migrations
             migrationBuilder.InsertData(
                 table: "Voos",
                 columns: new[] { "Id", "Assento", "CiaAereaId", "DataPartida", "Horapartida", "NumdoVoo", "PassageiroId", "ValorPassagem" },
-                values: new object[] { 5, "C21", "4", new DateTime(2020, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2020, 12, 12, 13, 55, 0, 0, DateTimeKind.Unspecified), 2, 1, "300.75" });
+                values: new object[] { 5, "C21", "4", "08/12/2020", "13:55", 2, 1, "300.75" });
 
             migrationBuilder.InsertData(
                 table: "Voos",
                 columns: new[] { "Id", "Assento", "CiaAereaId", "DataPartida", "Horapartida", "NumdoVoo", "PassageiroId", "ValorPassagem" },
-                values: new object[] { 3, "A09", "4", new DateTime(2020, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2020, 12, 12, 13, 55, 0, 0, DateTimeKind.Unspecified), 2, 2, "480.75" });
+                values: new object[] { 3, "A09", 4, "08/12/2020", "13:55", 2, 2, "480.75" });
 
             migrationBuilder.InsertData(
                 table: "Voos",
                 columns: new[] { "Id", "Assento", "CiaAereaId", "DataPartida", "Horapartida", "NumdoVoo", "PassageiroId", "ValorPassagem" },
-                values: new object[] { 2, "B14", "2", new DateTime(2020, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2020, 12, 12, 18, 5, 0, 0, DateTimeKind.Unspecified), 1, 3, "230.25" });
+                values: new object[] { 2, "B14", 2, "07/12/2020", "18:05", 1, 3, "230.25" });
 
             migrationBuilder.InsertData(
                 table: "Voos",
                 columns: new[] { "Id", "Assento", "CiaAereaId", "DataPartida", "Horapartida", "NumdoVoo", "PassageiroId", "ValorPassagem" },
-                values: new object[] { 4, "A14", "4", new DateTime(2020, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2020, 12, 12, 13, 55, 0, 0, DateTimeKind.Unspecified), 2, 4, "487.25" });
+                values: new object[] { 4, "A14", 4, "08/12/2020", "13:55", 2, 4, "487.25" });
 
             migrationBuilder.InsertData(
                 table: "Voos",
                 columns: new[] { "Id", "Assento", "CiaAereaId", "DataPartida", "Horapartida", "NumdoVoo", "PassageiroId", "ValorPassagem" },
-                values: new object[] { 1, "B01", "2", new DateTime(2020, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2020, 12, 12, 18, 5, 0, 0, DateTimeKind.Unspecified), 1, 5, "325.25" });
+                values: new object[] { 1, "B01", 2, "07/12/2020", "13:55", 1, 5, "325.25" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Voos_CiaAereaId",

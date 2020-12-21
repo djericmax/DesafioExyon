@@ -152,7 +152,7 @@ namespace ApiExyon.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<int>("NumdoVoo")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("PassageiroId")
                         .HasColumnType("INTEGER");
@@ -175,8 +175,8 @@ namespace ApiExyon.Migrations
                             Assento = "B01",
                             CiaAereaId = 2,
                             DataPartida = new DateTime(2020, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Horapartida = new DateTime(2020, 12, 12, 18, 5, 0, 0, DateTimeKind.Unspecified),
-                            NumdoVoo = "1",
+                            Horapartida = "13:55",
+                            NumdoVoo = 1,
                             PassageiroId = 5,
                             ValorPassagem = "325.25"
                         },
@@ -186,8 +186,8 @@ namespace ApiExyon.Migrations
                             Assento = "B14",
                             CiaAereaId = 2,
                             DataPartida = new DateTime(2020, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Horapartida = new DateTime(2020, 12, 12, 18, 5, 0, 0, DateTimeKind.Unspecified),
-                            NumdoVoo = "1",
+                            Horapartida = "13:55",
+                            NumdoVoo = 1,
                             PassageiroId = 3,
                             ValorPassagem = "230.25"
                         },
@@ -197,8 +197,8 @@ namespace ApiExyon.Migrations
                             Assento = "A09",
                             CiaAereaId = 4,
                             DataPartida = new DateTime(2020, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Horapartida = new DateTime(2020, 12, 12, 13, 55, 0, 0, DateTimeKind.Unspecified),
-                            NumdoVoo = "2",
+                            Horapartida = "13:55",
+                            NumdoVoo = 2,
                             PassageiroId = 2,
                             ValorPassagem = "480.75"
                         },
@@ -208,8 +208,8 @@ namespace ApiExyon.Migrations
                             Assento = "A14",
                             CiaAereaId = 4,
                             DataPartida = new DateTime(2020, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Horapartida = new DateTime(2020, 12, 12, 13, 55, 0, 0, DateTimeKind.Unspecified),
-                            NumdoVoo = "2",
+                            Horapartida = "13:55",
+                            NumdoVoo = 2,
                             PassageiroId = 4,
                             ValorPassagem = "487.25"
                         },
@@ -219,8 +219,8 @@ namespace ApiExyon.Migrations
                             Assento = "C21",
                             CiaAereaId = 4,
                             DataPartida = new DateTime(2020, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Horapartida = new DateTime(2020, 12, 12, 13, 55, 0, 0, DateTimeKind.Unspecified),
-                            NumdoVoo = "2",
+                            Horapartida = "13:55",
+                            NumdoVoo = 2,
                             PassageiroId = 1,
                             ValorPassagem = "300.75"
                         });

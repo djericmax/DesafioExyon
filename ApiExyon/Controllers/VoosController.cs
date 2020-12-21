@@ -22,7 +22,8 @@ namespace ApiExyon.Controllers
 
         [HttpGet]
         [Route("")]
-        public async Task<ActionResult<List<Voo>>> Get([FromServices] DataContext context)
+        public async Task<ActionResult<List<Voo>>> Get(
+            [FromServices] DataContext context)
         {
             var voos = await context.Voos.Include(c => c.CiaAerea).Include(p => p.Passageiro)
                 .AsNoTracking().ToListAsync();
@@ -31,7 +32,8 @@ namespace ApiExyon.Controllers
 
         [HttpGet]
         [Route("{Id:int}")]
-        public async Task<ActionResult<Voo>> GetById([FromServices] DataContext context, int id)
+        public async Task<ActionResult<Voo>> GetById(
+            [FromServices] DataContext context, int id)
         {
             try
             {
@@ -51,12 +53,13 @@ namespace ApiExyon.Controllers
 
         [HttpGet]
         [Route("cia/{ciaAereaId:int}")]
-        public async Task<ActionResult<List<Voo>>> GetByCiaAereaId([FromServices] DataContext context, int ciaAereaId)
+        public async Task<ActionResult<List<Voo>>> GetByCiaAereaId(
+            [FromServices] DataContext context, string ciaAereaId)
         {
             try
             {
                 var voos = await context.Voos.Include(c => c.CiaAerea).Include(p => p.Passageiro)
-                    .AsNoTracking().Where(c => c.CiaAereaId == ciaAereaId).ToListAsync();
+                    .AsNoTracking().Where(c => c.CiaAereaId == Convert.ToInt32(ciaAereaId)).ToListAsync();
                 if (voos == null)
                 {
                     return NotFound();
@@ -71,12 +74,13 @@ namespace ApiExyon.Controllers
 
         [HttpGet]
         [Route("pass/{passageiroId:int}")]
-        public async Task<ActionResult<List<Voo>>> GetByPassageiroId([FromServices] DataContext context, int passageiroId)
+        public async Task<ActionResult<List<Voo>>> GetByPassageiroId(
+            [FromServices] DataContext context, string passageiroId)
         {
             try
             {
                 var voos = await context.Voos.Include(c => c.CiaAerea).Include(p => p.Passageiro)
-                    .AsNoTracking().Where(p => p.PassageiroId == passageiroId).ToListAsync();
+                    .AsNoTracking().Where(p => p.PassageiroId == Convert.ToInt32(passageiroId)).ToListAsync();
                 if (voos == null)
                 {
                     return NotFound();
@@ -89,14 +93,16 @@ namespace ApiExyon.Controllers
             }
         }
 
-  /*      [HttpGet]
-        [Route("voo/{ciaAereaNumdoVoo:int}")]
-        public async Task<ActionResult<List<Voo>>> GetByCiaAereaNumdoVoo([FromServices] DataContext context, string ciaAereaNumdoVoo)
+       [HttpGet]
+        [Route("voo/{numdoVoo:int}")]
+        public async Task<ActionResult<List<Voo>>> GetByNumdoVoo(
+           [FromServices] DataContext context, string numdoVoo)
         {
             try
             {
                 var voos = await context.Voos.Include(c => c.CiaAerea).Include(p => p.Passageiro)
-                    .AsNoTracking().Where(c => c.NumdoVoo = ciaAereaNumdoVoo).ToListAsync();
+                                             .AsNoTracking().Where(c => c.NumdoVoo == Convert.ToInt32(numdoVoo))
+                                             .ToListAsync();
                 if (voos == null)
                 {
                     return NotFound();
@@ -107,12 +113,13 @@ namespace ApiExyon.Controllers
             {
                 return BadRequest($"Erro: {ex.Message}");
             }
-        } */
+        } 
 
 
         [HttpPost]
         [Route("")]
-        public async Task<ActionResult<Voo>> Post([FromServices] DataContext context,[FromBody] Voo voo)
+        public async Task<ActionResult<Voo>> Post(
+            [FromServices] DataContext context,[FromBody] Voo voo)
         {
             try
             {

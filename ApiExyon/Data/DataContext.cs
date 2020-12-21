@@ -36,11 +36,11 @@ namespace ApiExyon.Data
             });
 
             builder.Entity<Voo>().HasData(new List<Voo>() {
-                new Voo(1, "1", "B01", Convert.ToDateTime("07-12-2020"), Convert.ToDateTime("18:05"), "325.25", 2, 5),
-                new Voo(2, "1", "B14", Convert.ToDateTime("07-12-2020"), Convert.ToDateTime("18:05"), "230.25", 2, 3),
-                new Voo(3, "2", "A09", Convert.ToDateTime("08-12-2020"), Convert.ToDateTime("13:55"), "480.75", 4, 2),
-                new Voo(4, "2", "A14", Convert.ToDateTime("08-12-2020"), Convert.ToDateTime("13:55"), "487.25", 4, 4),
-                new Voo(5, "2", "C21", Convert.ToDateTime("08-12-2020"), Convert.ToDateTime("13:55"), "300.75", 4, 1),
+                new Voo(1, "1", "B01", "07-12-2020", "18:05", "325.25", "2", "5"),
+                new Voo(2, "1", "B14", "07-12-2020", "18:05", "230.25", "2", "3"),
+                new Voo(3, "2", "A09", "08-12-2020", "13:55", "480.75", "4", "2"),
+                new Voo(4, "2", "A14", "08-12-2020", "13:55", "487.25", "4", "4"),
+                new Voo(5, "2", "C21", "08-12-2020", "13:55", "300.75", "4", "1"),
             });
         }
     }

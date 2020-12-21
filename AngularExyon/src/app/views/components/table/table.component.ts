@@ -44,6 +44,7 @@ export class TableComponent implements OnInit {
 
   voos: Voo[] = [];
   vuo: Voo = new Voo;
+  numVoo: Voo = new Voo;
   passageiros: Passageiro[] = [];
   ciaaereas: Ciaaerea[] = [];
   ciaId: number | undefined;
@@ -66,6 +67,7 @@ export class TableComponent implements OnInit {
     this.carregaCiaaereas();
     this.carregaPassageiros();
     this.carregaVooByciaAereaId();
+    this.carregaVooByNumdoVoo();
   }
 
   carregaPassageiros() {
@@ -84,7 +86,7 @@ export class TableComponent implements OnInit {
     this.ciaaereaService.getAll().subscribe(
       (cia: Ciaaerea[]) => {
         this.ciaaereas = cia;
-        console.log(this.ciaaereas[0]);           
+       // console.log(this.ciaaereas[0]);           
       },
       (erro: any) => {
         console.log(erro);
@@ -105,10 +107,22 @@ export class TableComponent implements OnInit {
   }
 
   carregaVooByciaAereaId() {
-      this.vooService.getByciaAereaId(4).subscribe(
+      this.vooService.getByCiaAereaId(4).subscribe(
         (vuo: Voo) => { 
           this.vuo = vuo;
-          console.log(vuo);
+       //   console.log(vuo);
+        },
+        (erro: any) => {
+          console.log(erro);
+         }
+      );
+  }
+  
+  carregaVooByNumdoVoo() {
+      this.vooService.getByNumdoVoo(14).subscribe(
+        (numVoo: Voo) => { 
+          this.numVoo = numVoo;
+          console.log(numVoo);
         },
         (erro: any) => {
           console.log(erro);
@@ -132,7 +146,7 @@ export class TableComponent implements OnInit {
   }
 
   salvarVoo(vuo: Voo) {
-    this.vooService.puttable(vuo.id, vuo).subscribe(
+    this.vooService.put(vuo.id, vuo).subscribe(
         (model: any) => {
         console.log(model);
         this.carregaVoos();
@@ -149,6 +163,8 @@ export class TableComponent implements OnInit {
       (model: any) => {
         console.log(model);
         this.carregaVoos();
+        this.voltar();
+
       },
       (erro: any) => {
         console.error(erro)
