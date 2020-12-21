@@ -11,9 +11,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class SidebarComponent implements OnInit {
 
   public titulo = 'Sistema para gerenciamento de passagens aéreas - E-XYON';
+  public icone!: string;
   constructor() { }
 
   ngOnInit(): void {
-  }
-
+  }  
 }

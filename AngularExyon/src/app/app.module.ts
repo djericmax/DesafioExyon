@@ -28,6 +28,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HttpClientModule } from '@angular/common/http';
@@ -39,7 +40,9 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { TextMaskModule } from 'angular2-text-mask';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { registerLocaleData } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+
 
 registerLocaleData(localePt)
 
@@ -77,6 +80,7 @@ registerLocaleData(localePt)
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    CurrencyMaskModule,
     FormsModule,
     ReactiveFormsModule,
     ModalModule.forRoot(),
@@ -87,7 +91,7 @@ registerLocaleData(localePt)
     TextMaskModule,
     NgxMaterialTimepickerModule,
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}, CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

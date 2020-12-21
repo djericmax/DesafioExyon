@@ -7,6 +7,7 @@ import { Voo } from 'src/app/Models/Voo';
 import { CiaaereaService } from 'src/app/Services/ciaaerea.service';
 import { PassageiroService } from 'src/app/Services/passageiro.service';
 import { VooService } from 'src/app/Services/voo.service';
+import { CurrencyPipe } from '@angular/common';
 import {
   MAT_MOMENT_DATE_FORMATS,
   MomentDateAdapter,
@@ -36,6 +37,8 @@ import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/
 })
 export class TableComponent implements OnInit {
 
+  public myModel = ''
+  public mask = [/[0-9]/, /[0-9]/, /[0-9]/, '.', /[0-9]/, /[0-9]/, /[0-9]/, '.', /[0-9]/, /[0-9]/, /[0-9]/, '-', /[0-9]/, /[0-9]/]
   public modalRef!: BsModalRef;
   public tableForm!: FormGroup;
   titulo = 'Dados de Vôos';
@@ -53,7 +56,8 @@ export class TableComponent implements OnInit {
     this.modalRef = this.modalService.show(template);
   }
 
-  constructor(private _adapter: DateAdapter<any>,
+  constructor(private currencyPipe: CurrencyPipe,
+              private _adapter: DateAdapter<any>,
               private fb: FormBuilder,
               private modalService: BsModalService,
               private passageiroService: PassageiroService,

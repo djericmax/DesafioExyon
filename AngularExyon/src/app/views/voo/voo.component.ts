@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Voo } from 'src/app/Models/Voo';
 import { VooService } from 'src/app/Services/voo.service';
+import { CurrencyPipe } from '@angular/common';
 import {
   MAT_MOMENT_DATE_FORMATS,
   MomentDateAdapter,
@@ -44,7 +45,8 @@ export class VooComponent implements OnInit {
     this.modalRef = this.modalService.show(lgModal);
   }
 
-  constructor(private _adapter: DateAdapter<any>,
+  constructor(private currencyPipe: CurrencyPipe,
+              private _adapter: DateAdapter<any>,
               private fb: FormBuilder,
               private modalService: BsModalService,
               private vooService: VooService) {
@@ -53,7 +55,8 @@ export class VooComponent implements OnInit {
 
   ngOnInit(): void {
     this.carregaVoos();
-  }
+    
+    }
 
   carregaVoos() {
       this.vooService.getAll().subscribe(

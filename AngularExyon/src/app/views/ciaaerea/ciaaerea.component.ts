@@ -15,11 +15,10 @@ export class CiaaereaComponent implements OnInit {
 
   public modalRef!: BsModalRef;
   public ciaaereaForm!: FormGroup;
-  titulo = 'Companhias Aéreas';
+  public titulo = 'Companhias Aéreas';
   public ciaaereaSelecionado!: Ciaaerea;
   public textSimples: string | undefined;
   public modo!: string;
-
   public ciaaereas: Ciaaerea[] = [];
  
   openModal(template: TemplateRef<any>) {

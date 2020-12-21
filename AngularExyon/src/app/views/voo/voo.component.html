@@ -39,8 +39,8 @@
                     </div>
                     <mat-form-field class="example-full-width ">
                         <mat-label for="formGroupExampleInput" class="warn">Valor em R$</mat-label>
-                        <input matInput formControlName="valorPassagem">
-
+                        <input matInput formControlName="valorPassagem" currencyMask
+                        [options]="{ align:'left', prefix: 'R$ ', thousands: '.', decimal: ',' }">
                     </mat-form-field>
                     <mat-form-field class="example-full-width ">
                         <mat-label for="formGroupExampleInput" class="warn">ID Cia Aérea</mat-label>
